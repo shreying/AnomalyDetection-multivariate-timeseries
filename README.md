@@ -2,7 +2,7 @@
 
 A powerful, ensemble-based anomaly detection system for multivariate time series data. This pipeline combines a **LSTM Autoencoder** for capturing temporal patterns with a suite of **PyOD statistical models** for robust outlier detection, providing interpretable results with feature attribution.
 
-## 🧠 What This Code Does
+## What This Code Does
 
 This project is designed to identify unusual patterns and potential faults in time-series data (e.g., server metrics, sensor readings, financial data). It goes beyond simple anomaly scoring by:
 
@@ -17,7 +17,7 @@ This project is designed to identify unusual patterns and potential faults in ti
 
 ### Architecture Overview
 
-
+[Architecture diagram](architechture.svg)
 
 ## ⚙️ How It Works
 
@@ -104,7 +104,7 @@ python anomaly_detection_pipeline.py \
     --full_end "2023-10-19 07:59:00"
 ```
 
-## 📁 Input & Output
+## Input & Output
 
 ### Expected Input Format
 Your CSV file must contain a `Time` column and various numerical features.
@@ -123,16 +123,16 @@ The output CSV includes all original data plus the following columns:
 | `Anomaly_Level` | Classification: `Normal`, `Slightly Unusual`, `Moderate`, `Significant`, `Severe`. |
 | `top_feature_1` to `top_feature_7` | The features that contributed most to the anomaly, ordered by importance. |
 
-## 📊 Example Output Visualization
+## Example Output Visualization
 
 The pipeline automatically generates a plot showing:
 - The **smoothed abnormality score** over time.
 - Dynamic statistical thresholds for `Moderate` (mean+2std), `Significant` (mean+3std), and `Severe` (mean+4std) anomalies.
 - Color-coded dots highlighting detected anomalies.
 
+[plot](Plot.png)
 
-
-## 🔧 Customization
+## Customization
 
 You can easily customize the pipeline by modifying the core classes:
 
@@ -152,7 +152,7 @@ weights = [0.7, 0.1, 0.1, 0.1] # 70% weight to LSTM
 detector = AnomalyDetector(lstm_model, pyod_models, weights)
 ```
 
-## 📋 Dependencies
+## Dependencies
 
 - **Python 3.7+**
 - **pandas**: Data loading and manipulation
