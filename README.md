@@ -17,9 +17,9 @@ This project is designed to identify unusual patterns and potential faults in ti
 
 ### Architecture Overview
 
-[Architecture diagram](architechture.svg)
+![Alt text](https://github.com/shreying/AnomalyDetection-multivariate-timeseries/blob/main/architecture.png?raw=true)
 
-## ⚙️ How It Works
+## How It Works
 
 1.  **Data Loading & Cleaning (`DataProcessor`):**
     *   Loads the CSV, parses the `Time` column, and sorts the data.
@@ -47,7 +47,7 @@ This project is designed to identify unusual patterns and potential faults in ti
     *   Results are saved to a CSV containing all original data, scores, anomaly levels, and top features.
     *   A dynamic plot is generated with statistical thresholds, showing the smoothed score and highlighting anomalies.
 
-## 🚀 Sample Usage
+## Sample Usage
 
 ### Prerequisites
 
@@ -130,7 +130,7 @@ The pipeline automatically generates a plot showing:
 - Dynamic statistical thresholds for `Moderate` (mean+2std), `Significant` (mean+3std), and `Severe` (mean+4std) anomalies.
 - Color-coded dots highlighting detected anomalies.
 
-[plot](Plot.png)
+![Alt text](https://github.com/shreying/AnomalyDetection-multivariate-timeseries/blob/main/Plot.png?raw=true)
 
 ## Customization
 
